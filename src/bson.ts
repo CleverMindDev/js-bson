@@ -108,7 +108,7 @@ export interface Document {
 const MAXSIZE = 1024 * 1024 * 17;
 
 // Current Internal Temporary Serialization Buffer
-let buffer = Buffer.alloc(MAXSIZE);
+let buffer: Buffer;
 
 /**
  * Sets the size of the internal serialization buffer.
@@ -118,9 +118,9 @@ let buffer = Buffer.alloc(MAXSIZE);
  */
 export function setInternalBufferSize(size: number): void {
   // Resize the internal serialization buffer if needed
-  if (buffer.length < size) {
-    buffer = Buffer.alloc(size);
-  }
+  //if (buffer.length < size) {
+  buffer = Buffer.alloc(size);
+  //}
 }
 
 /**
@@ -141,7 +141,7 @@ export function serialize(object: Document, options: SerializeOptions = {}): Buf
     typeof options.minInternalBufferSize === 'number' ? options.minInternalBufferSize : MAXSIZE;
 
   // Resize the internal serialization buffer if needed
-  if (buffer.length < minInternalBufferSize) {
+  if (buffer === undefined || (buffer && buffer.length !== minInternalBufferSize)) {
     buffer = Buffer.alloc(minInternalBufferSize);
   }
 
