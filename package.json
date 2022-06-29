@@ -1,5 +1,5 @@
 {
-  "name": "bson",
+  "name": "@clevermind/bson",
   "description": "A bson parser for node.js and the browser",
   "keywords": [
     "mongodb",
@@ -16,13 +16,13 @@
   ],
   "types": "bson.d.ts",
   "version": "4.4.1",
-  "author": { 
-    "name": "The MongoDB NodeJS Team", 
+  "author": {
+    "name": "The MongoDB NodeJS Team",
     "email": "dbx-node@mongodb.com"
   },
   "license": "Apache-2.0",
   "contributors": [],
-  "repository": "mongodb/js-bson",
+  "repository": "CleverMindDev/js-bson",
   "bugs": {
     "url": "https://jira.mongodb.org/projects/NODE/issues/"
   },
